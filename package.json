@@ -1,0 +1,24 @@
+{
+  "name": "EONRoller",
+  "version": "1.0.0",
+  "description": "Discordbot to roll exploding dice according to the EON3 system",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niqlasAxelsson/EONRoller.git"
+  },
+  "keywords": [],
+  "author": "Niklas Axelsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niqlasAxelsson/EONRoller/issues"
+  },
+  "homepage": "https://github.com/niqlasAxelsson/EONRoller#readme",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^3.3.3"
+  }
+}
