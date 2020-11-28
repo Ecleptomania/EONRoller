@@ -95,6 +95,86 @@ bot.on('message', async (msg) => {
     //notify channel of deleted messages
     msg.channel.send(`deleted  ${args[0]} posts for you`);
   }
+
+  if(command === "eon") {
+    var message = msg.content;
+    var numrolls = parseInt(args[0]);
+    var outroll = "" + parseInt(args[0]) + "T6 : ";
+    var plus = 0;
+    var times = 0;
+    //var ids = msg.split(/--/)[1];
+    /*
+    if(msg.search(/\+/g)!=-1){
+        plus = parseInt(msg.split("+")[1]);
+    }
+    else if(msg.search(/\*//*g)!=-1){
+        times = parseInt(msg.split("*")[1]);
+    }
+    */
+
+    var count = 0;
+    var total = 0;
+    var roll = 0;
+    var first = true;
+    var output = "" + outroll + "" ;
+    while (count < numrolls) {
+        roll = Math.floor(Math.random() * 6) + 1;
+        if (roll === 6) {
+            if(first == true){
+                output = output + "[6]";
+                first = false;
+                numrolls = numrolls + 2;
+            }
+            else{
+                output = output + ",[6]";
+                numrolls = numrolls + 2;
+            }
+        } else {
+            total += roll;
+            if(first == true){
+                output = output + roll;
+                first = false;
+                }
+            else{
+                output = output + "," + roll;
+                }
+        }
+        count++;
+    }
+
+    console.log("summa : " + (total) + "");
+
+    msg.channel.send( output +  " Total: " + (total) + " ");
+            
+
+        /*
+        let turnValue = 0;
+        
+        if(plus > 0 && times == 0){
+            sendChat(msg.who, output + " = " + total + "+" + plus + " Total: " + (total+plus) + "");
+            turnValue = (total+plus);
+        }
+        else if(plus == 0 && times > 0){
+            sendChat(msg.who, output + " = " + total + "*" + times + " Total: " + (total*times) + "");
+            turnValue = (total*times);
+        }
+        else{
+            */
+            
+        //}
+
+        /*
+        _.chain(msg.selected)
+            .pluck('_id')
+            .union((ids && ids.length) ? ids.split(/\s+/) : [])
+            .map((id)=>getObj('graphic',id))
+            .reject(_.isUndefined)
+            .each((t)=>{
+                AddTurn(t.id,t.get('pageid'),turnValue);
+            });
+        */
+
+  }
   
 })
 
