@@ -1,47 +1,3 @@
-/*
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   //token: auth.token,
-   token : 'NzgyMjAyNzI4ODYzNjI5MzIz.X8IxDw.bLR1MmEcIPCIYABxl-a98oJF4Dw',
-   autorun: true
-});
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-    console.log('bot is ready');
-});
-bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-       
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Pong!'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
-     }
-});
-*/
-
 
 const Discord = require("discord.js");
 const prefix = '!'
@@ -76,30 +32,15 @@ bot.on('message', async (msg) => {
   //log any arguments passed with a command
   console.log(args)
 
-  if(command === 'ego') {
-    msg.react("😀")
-    msg.reply('wow, what a great post')
-  }
-
-  if (command === "clear") {
-    //default deletes message itself plus previous
-    let num = 2;
-    
-    //if argument is provided, we need to convert it from string to number
-    if (args[0]) {
-      //add 1 to delete clear command itself
-      num = parseInt(args[0]) + 1;
-    }
-    //bulk delete the messages
-    msg.channel.bulkDelete(num);
-    //notify channel of deleted messages
-    msg.channel.send(`deleted  ${args[0]} posts for you`);
-  }
+  
 
   if(command === "eon") {
     var message = msg.content;
-    var numrolls = parseInt(args[0]);
-    var outroll = "" + parseInt(args[0]) + "T6 : ";
+    var diceDescriptor = args[0].split('t');
+    //var numrolls = parseInt(args[0]);
+    var numrolls = parseInt(diceDescriptor[0]);
+    var dicekind = parseInt(diceDescriptor[1]);
+    var outroll = "" + parseInt(args[0]) + "T" +dicekind + "  : ";
     var plus = 0;
     var times = 0;
     //var ids = msg.split(/--/)[1];
@@ -118,15 +59,15 @@ bot.on('message', async (msg) => {
     var first = true;
     var output = "" + outroll + "" ;
     while (count < numrolls) {
-        roll = Math.floor(Math.random() * 6) + 1;
-        if (roll === 6) {
+        roll = Math.floor(Math.random() * dicekind) + 1;
+        if (roll === dicekind) {
             if(first == true){
-                output = output + "[6]";
+                output = output + "["+ dicekind+ "]";
                 first = false;
                 numrolls = numrolls + 2;
             }
             else{
-                output = output + ",[6]";
+                output = output + ",["+ dicekind+ "]";
                 numrolls = numrolls + 2;
             }
         } else {
@@ -147,66 +88,8 @@ bot.on('message', async (msg) => {
     msg.channel.send( output +  " Total: " + (total) + " ");
             
 
-        /*
-        let turnValue = 0;
-        
-        if(plus > 0 && times == 0){
-            sendChat(msg.who, output + " = " + total + "+" + plus + " Total: " + (total+plus) + "");
-            turnValue = (total+plus);
-        }
-        else if(plus == 0 && times > 0){
-            sendChat(msg.who, output + " = " + total + "*" + times + " Total: " + (total*times) + "");
-            turnValue = (total*times);
-        }
-        else{
-            */
-            
-        //}
-
-        /*
-        _.chain(msg.selected)
-            .pluck('_id')
-            .union((ids && ids.length) ? ids.split(/\s+/) : [])
-            .map((id)=>getObj('graphic',id))
-            .reject(_.isUndefined)
-            .each((t)=>{
-                AddTurn(t.id,t.get('pageid'),turnValue);
-            });
-        */
 
   }
   
 })
 
-/*
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
-});
-
-
-bot.on('message', function (user, userID, channelID, message1, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-
-
-    if (message1.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-       
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Pong!'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
-     }
-});
-*/
