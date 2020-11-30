@@ -2,8 +2,9 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const token = 'NzgyMjAyNzI4ODYzNjI5MzIz.X8IxDw.bLR1MmEcIPCIYABxl-a98oJF4Dw';
+var auth = require('./auth.json'); //(with path)
 
-const prefix = '!'
+const prefix = "!"
 const diceRegexExplode = /[0-9]+[td][0-9]+/g;
 const diceRegexNormal = /[0-9]+[n][0-9]+/g;
 
@@ -18,20 +19,20 @@ bot.login(token)
 bot.on('message', async (msg) => {
   //if our message doesnt start with our defined prefix, dont go any further into function
   if(!msg.content.startsWith(prefix)) {
-    console.log('no prefix')
+    //be careful, this filters away the bots own messages as well
     return
   }
   
   //slices off prefix from our message, then trims extra whitespace, then returns our array of words from the message
   const args = msg.content.slice(prefix.length).trim().split(' ')
-  
+  console.log(args)
   //splits off the first word from the array, which will be our command
   const command = args.shift().toLowerCase()
   const firstArgumentStr =  args.shift().toLowerCase();
   //log the command
   console.log('command: ', command)
   //log any arguments passed with a command
-  console.log(args)
+  
 
 
 
@@ -45,7 +46,7 @@ bot.on('message', async (msg) => {
         //var numrolls = parseInt(args[0]);
         var numrolls = parseInt(diceDescriptor[0]);
         var dicekind = parseInt(diceDescriptor[1]);
-        var outroll = "" + parseInt(args[0]) + "T" +dicekind + "  : ";
+        var outroll = "" + parseInt(firstArgumentStr[0]) + "T" +dicekind + "  : ";
         var plus = 0;
         var times = 0; 
         //var ids = msg.split(/--/)[1];
@@ -96,24 +97,30 @@ bot.on('message', async (msg) => {
     }
     else if(firstArgumentStr.search(diceRegexNormal) != -1) {
         //Roll Normal Dice
-       
         var message = msg.content;
         var diceDescriptor = firstArgumentStr.split(/[n]/);
         //var numrolls = parseInt(args[0]);
         var numrolls = parseInt(diceDescriptor[0]);
         var dicekind = parseInt(diceDescriptor[1]);
-        var outroll = "" + parseInt(args[0]) + "T" +dicekind + "  : ";
+        var outroll = "" + parseInt(firstArgumentStr[0]) + "T" +dicekind + "  : ";
 
         count = 0;
         var total = 0;
         var roll = 0;
         var output = "" + outroll + "" ;
+        var first = true;
         while (count < numrolls) {
             roll = Math.floor(Math.random() * dicekind) + 1;
             
             total += roll;
             count ++;
-            output = output + "," + roll;
+            if (first){
+                output = output + " " + roll;
+                first = false;
+            }else{
+                output = output + "," + roll;
+            }
+
 
             
         }
