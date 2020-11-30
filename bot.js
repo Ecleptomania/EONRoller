@@ -1,5 +1,6 @@
 
 const auth = require('./auth.json'); //(with path)
+const tables = require('./tables.json');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const token = auth.token;
