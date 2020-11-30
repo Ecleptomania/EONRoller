@@ -128,6 +128,14 @@ bot.on('message', async (msg) => {
 
         msg.channel.send( output +  " Total: " + (total) + " ");
     }
+    else if(firstArgumentStr === "hit"){
+        if (args.length<=1){
+            msg.channel.send( "Missing parameters for command: " + firstArgumentStr);
+            return;
+        } 
+        const secondArgumentStr =  args.shift().toLowerCase();
+        console.log("hit test");
+    }
     else{
         //Error Message
         msg.channel.send( "Incocrecct command: " + firstArgumentStr);

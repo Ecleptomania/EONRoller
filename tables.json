@@ -2,8 +2,10 @@
 	"tables": {
 		"table":{
 			"name":"trafftabell",
-			"deltabel": {
-				"name":"normalHugg",
+			"deltabell": {
+				"name" : "normalHugg",
+				"kind" : "hugg",
+				"dicekind": 20,
 				"values" : [
 					{"maxValue":8, "träffområde": "huvud", "delområde" : "ansikte"},
 					{"maxValue":16, "träffområde": "huvud", "delområde" : "skalle"},
@@ -14,16 +16,73 @@
 
 		}, 
 		"table":{
-			"name":"skadetabell",
-			"deltabel": {
-				"name":"huggAnsikte",
-				"values" : [
-					{"maxValue":1, "träffområde": "hjärna", "trauma" : 2, "smarta" : 1, "blodning" : 0.5},
-					{"maxValue":16, "träffområde": "oga", "trauma" : 0.5, "smarta" : 1, "blodning" : 0.1},
-					{"maxValue":20, "träffområde": "mun/kake", "trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1}
+			"name":"skadetabeller",
+			"skadetabeller": [
+				{
+				"kind": "hugg",
+				"deltabeller": [
 
-				]
-			}
+						{
+						"name":"huggAnsikte",
+						"kind": "hugg",
+						"delområde": "ansikte",
+						"dicekind": 10,
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", "trauma" : 2, "smarta" : 1, "blodning" : 0.5},
+								{ "träffområde": "oga", "trauma" : 0.5, "smarta" : 1, "blodning" : 0.1},
+								{ "träffområde": "mun/kake", "trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1},
+
+							]
+						},
+						{
+						"name":"huggSkalle",
+						"kind": "hugg",
+						"delområde": "skalle",
+						"dicekind": 10,
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", "trauma" : 2, "smarta" : 1, "blodning" : 0.5},
+								{ "träffområde": "oga", "trauma" : 0.5, "smarta" : 1, "blodning" : 0.1},
+								{ "träffområde": "mun/kake", "trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1},
+						
+							]
+						}
+					]
+				},
+				{
+				"kind": "stick",
+				"deltabeller": [
+
+						{
+						"name":"stickAnsikte",
+						"kind": "stick",
+						"delområde": "ansikte",
+						"dicekind": 10,
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", "trauma" : 2, "smarta" : 1, "blodning" : 0.5},
+								{ "träffområde": "oga", "trauma" : 0.5, "smarta" : 1, "blodning" : 0.1},
+								{ "träffområde": "mun/kake", "trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1},
+
+							]
+						},
+						{
+						"name":"stickSkalle",
+						"kind": "stick",
+						"delområde": "skalle",
+						"dicekind": 10,
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", "trauma" : 2, "smarta" : 1, "blodning" : 0.5},
+								{ "träffområde": "oga", "trauma" : 0.5, "smarta" : 1, "blodning" : 0.1},
+								{ "träffområde": "mun/kake", "trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1},
+						
+							]
+						}
+					]
+				}
+			]
 
 		}
 	}
