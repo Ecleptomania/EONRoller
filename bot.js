@@ -1,10 +1,9 @@
 
+const auth = require('./auth.json'); //(with path)
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = 'NzgyMjAyNzI4ODYzNjI5MzIz.X8IxDw.bLR1MmEcIPCIYABxl-a98oJF4Dw';
-var auth = require('./auth.json'); //(with path)
-
-const prefix = "!"
+const token = auth.token;
+const prefix = auth.prefix;
 const diceRegexExplode = /[0-9]+[td][0-9]+/g;
 const diceRegexNormal = /[0-9]+[n][0-9]+/g;
 
