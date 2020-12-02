@@ -6,8 +6,9 @@
 					"name":"normal",
 					"values" : [
 						{"maxValue":33, "träffområde": "huvud", "delområde" : "ansikte"},
-						{"maxValue":66, "träffområde": "huvud", "delområde" : "skalle"},
-						{"maxValue":100, "träffområde": "huvud", "delområde" : "hals"}
+						{"maxValue":45, "träffområde": "huvud", "delområde" : "skalle"},
+						{"maxValue":66, "träffområde": "huvud", "delområde" : "hals"},
+						{"maxValue":100, "träffområde": "torso", "delområde" : "torso"}
 					]
 				}
 
