@@ -1,12 +1,14 @@
 
 const auth = require('./auth.json'); //(with path)
-const tables = require('./tables.json');
+const commandWords = require('./commandWords.json');
+const tables = require('./hit_tables.json');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const token = auth.token;
-const prefix = auth.prefix;
+const prefix = commandWords.prefix;
 const diceRegexExplode = /[0-9]+[td][0-9]+/g;
 const diceRegexNormal = /[0-9]+[n][0-9]+/g;
+const d100DiceKind = 100;
 
 bot.on('ready', () => {
   console.log('bot is ready')
@@ -32,8 +34,6 @@ bot.on('message', async (msg) => {
   //log the command
   console.log('command: ', command)
   //log any arguments passed with a command
-  
-
 
 
   if(command === "eon") {
@@ -47,22 +47,13 @@ bot.on('message', async (msg) => {
         var numrolls = parseInt(diceDescriptor[0]);
         var dicekind = parseInt(diceDescriptor[1]);
         var outroll = "" + parseInt(firstArgumentStr[0]) + "T" +dicekind + "  : ";
-        var plus = 0;
-        var times = 0; 
-        //var ids = msg.split(/--/)[1];
-        /*
-        if(msg.search(/\+/g)!=-1){
-            plus = parseInt(msg.split("+")[1]);
-        }
-        else if(msg.search(/\*//*g)!=-1){
-            times = parseInt(msg.split("*")[1]);
-        }
-        */
-
+        //var lus = 0;
+        //var times = 0; 
         var count = 0;
         var total = 0;
         var roll = 0;
         var first = true;
+
         var output = "" + outroll + "" ;
         while (count < numrolls) {
             roll = Math.floor(Math.random() * dicekind) + 1;
@@ -127,14 +118,30 @@ bot.on('message', async (msg) => {
         console.log("summa : " + (total) + "");
 
         msg.channel.send( output +  " Total: " + (total) + " ");
-    }
-    else if(firstArgumentStr === "hit"){
-        if (args.length<=1){
-            msg.channel.send( "Missing parameters for command: " + firstArgumentStr);
-            return;
-        } 
-        const secondArgumentStr =  args.shift().toLowerCase();
-        console.log("hit test");
+    } else if(firstArgumentStr === commandWords.hitCommand)
+    {
+
+        if (args.length < 2){
+                    msg.channel.send( "Incocrecct Hit Syntax: Missing arguments \n The hit command needs a hit type and an attack angle:"
+                        + "\n \"!eon hit \'hit type\' \'attack angle\' \"");
+                    return;
+        }
+        const attackKind = args.shift().toLowerCase();
+        const attackAngle = args.shift().toLowerCase();
+
+        if (!((attackKind === commandWords.huggCommandWord)||(attackKind === commandWords.stickCommandWord)))
+        {
+            msg.channel.send( "Incocrecct Hit Syntax: Hit type not valid \n Hit types are: \'"+ commandWords.huggCommandWord + "\'' and \'" + commandWords.stickCommandWord + "\'");
+        }
+
+        roll = Math.floor(Math.random() * d100DiceKind) + 1;
+
+
+
+
+
+        msg.channel.send( "Hit command logged: rolled: "  + roll + "");
+
     }
     else{
         //Error Message

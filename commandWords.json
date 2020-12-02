@@ -1,0 +1,9 @@
+{
+	"prefix": "!",
+	"hitCommand" : "hit",
+	"huggCommandWord" : "hugg",
+	"stickCommandWord" : "stick",
+	"normalAttackWord" : "normal",
+	"HighAttackWord" : "hög",
+	"lowAttackWord" : "låg"
+}
