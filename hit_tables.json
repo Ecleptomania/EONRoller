@@ -11,17 +11,17 @@
 					]
 				}
 
-			}
-		, {
-			"typ" : "hugg",
-			"table":{
-					"name":"High",
-					"values" : [
-						{"maxValue":50, "träffområde": "huvud", "delområde" : "ansikte"},
-						{"maxValue":75, "träffområde": "huvud", "delområde" : "skalle"},
-						{"maxValue":10, "träffområde": "huvud", "delområde" : "hals"}
-						]
-					}
+			}, 
+			{
+				"typ" : "hugg",
+				"table":{
+						"name":"hög",
+						"values" : [
+							{"maxValue":50, "träffområde": "huvud", "delområde" : "ansikte"},
+							{"maxValue":75, "träffområde": "huvud", "delområde" : "skalle"},
+							{"maxValue":100, "träffområde": "huvud", "delområde" : "hals"}
+							]
+						}
 
 				}
 			

@@ -1,7 +1,7 @@
 
 const auth = require('./auth.json'); //(with path)
 const commandWords = require('./commandWords.json');
-const tables = require('./hit_tables.json');
+const hit_tables = require('./hit_tables.json');
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const token = auth.token;
@@ -132,12 +132,32 @@ bot.on('message', async (msg) => {
         if (!((attackKind === commandWords.huggCommandWord)||(attackKind === commandWords.stickCommandWord)))
         {
             msg.channel.send( "Incocrecct Hit Syntax: Hit type not valid \n Hit types are: \'"+ commandWords.huggCommandWord + "\'' and \'" + commandWords.stickCommandWord + "\'");
-        }
+            return;
+       }
 
         roll = Math.floor(Math.random() * d100DiceKind) + 1;
 
+       // console.log("Attack Debug table "+  JSON.parse(hit_tables));
 
+        for (i = 0; i < hit_tables.tables.length; i ++){
+            var attackKindTable = hit_tables.tables[i];
 
+            if (attackKindTable.typ === attackKind) {
+
+                const attackTableUsed = attackKindTable.table;
+                if (attackTableUsed.name === attackAngle){
+                      for (j = 0; j < attackTableUsed.values.length; j ++){
+                        var partHit = attackTableUsed.values[j];
+                        console.log("Attack Debug table2 "+  partHit.maxValue );
+                        if (roll <= partHit.maxValue){
+                            msg.channel.send( "Du rullade "  + roll + ",  Attackerade: " + partHit.träffområde + " och träffade: " +  partHit.delområde);
+                        return;
+                        }
+                      }
+                }
+
+            }
+        }
 
 
         msg.channel.send( "Hit command logged: rolled: "  + roll + "");
