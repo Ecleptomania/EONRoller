@@ -111,8 +111,6 @@ bot.on('message', async (msg) => {
             }else{
                 output = output + "," + roll;
             }
-
-
             
         }
         console.log("summa : " + (total) + "");
@@ -135,9 +133,14 @@ bot.on('message', async (msg) => {
             return;
        }
 
-        roll = Math.floor(Math.random() * d100DiceKind) + 1;
 
-       // console.log("Attack Debug table "+  JSON.parse(hit_tables));
+        if (!((attackAngle === commandWords.normalAttackWord)||(attackAngle === commandWords.highAttackWord)||(attackAngle === commandWords.lowAttackWord)))
+        {
+            msg.channel.send( "Incocrecct Hit Syntax: Hit Angle not valid \n Hit angles are: \'"+ commandWords.normalAttackWord + "\'' ,  \'" + commandWords.highAttackWord + "\' and \'" + commandWords.lowAttackWord + "\'");
+            return;
+       }
+
+        roll = Math.floor(Math.random() * d100DiceKind) + 1;
 
         for (i = 0; i < hit_tables.tables.length; i ++){
             var attackKindTable = hit_tables.tables[i];
@@ -146,14 +149,14 @@ bot.on('message', async (msg) => {
 
                 const attackTableUsed = attackKindTable.table;
                 if (attackTableUsed.name === attackAngle){
-                      for (j = 0; j < attackTableUsed.values.length; j ++){
+                    for (j = 0; j < attackTableUsed.values.length; j ++){
                         var partHit = attackTableUsed.values[j];
-                        console.log("Attack Debug table2 "+  partHit.maxValue );
                         if (roll <= partHit.maxValue){
-                            msg.channel.send( "Du rullade "  + roll + ",  Attackerade: " + partHit.träffområde + " och träffade: " +  partHit.delområde);
+                            msg.channel.send( "Du rullade "  + roll + ",  Attackerade: " 
+                                + partHit.träffområde + " och träffade: " +  partHit.delområde);
                         return;
                         }
-                      }
+                    }
                 }
 
             }

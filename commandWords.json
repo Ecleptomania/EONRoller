@@ -4,6 +4,6 @@
 	"huggCommandWord" : "hugg",
 	"stickCommandWord" : "stick",
 	"normalAttackWord" : "normal",
-	"HighAttackWord" : "hög",
+	"highAttackWord" : "hög",
 	"lowAttackWord" : "låg"
 }
