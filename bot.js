@@ -46,7 +46,7 @@ bot.on('message', async (msg) => {
         //var numrolls = parseInt(args[0]);
         var numrolls = parseInt(diceDescriptor[0]);
         var dicekind = parseInt(diceDescriptor[1]);
-        var outroll = "" + parseInt(firstArgumentStr[0]) + "T" +dicekind + "  : ";
+        var outroll = "" + parseInt(numrolls) + "T" +dicekind + "  : ";
         //var lus = 0;
         //var times = 0; 
         var count = 0;
@@ -169,7 +169,7 @@ bot.on('message', async (msg) => {
     else{
         //Error Message
         msg.channel.send( "Incocrecct command: " + firstArgumentStr);
-  }
+    }
  }
 
   
