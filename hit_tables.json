@@ -61,7 +61,7 @@
 			{
 			"typ" : "hugg",
 			"table":{
-					"name":"lågt",
+					"name":"låg",
 					"values" : [
 						{"maxValue":16, "träffområde": "buk", "delområde" : "mage"},
 						{"maxValue":20, "träffområde": "buk", "delområde" : "underliv"},
