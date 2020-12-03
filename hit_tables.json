@@ -5,26 +5,80 @@
 
 					"name":"normal",
 					"values" : [
-						{"maxValue":33, "träffområde": "huvud", "delområde" : "ansikte"},
-						{"maxValue":45, "träffområde": "huvud", "delområde" : "skalle"},
-						{"maxValue":66, "träffområde": "huvud", "delområde" : "hals"},
-						{"maxValue":100, "träffområde": "torso", "delområde" : "torso"}
+						{"maxValue":8, "träffområde": "huvud", "delområde" : "ansikte"},
+						{"maxValue":16, "träffområde": "huvud", "delområde" : "skalle"},
+						{"maxValue":20, "träffområde": "huvud", "delområde" : "hals"},
+						{"maxValue":24, "träffområde": "vänster arm", "delområde" : "skuldra"}
+						{"maxValue":28, "träffområde": "vänster arm", "delområde" : "överarm"},
+						{"maxValue":30, "träffområde": "vänster arm", "delområde" : "armbåge"},
+						{"maxValue":36, "träffområde": "vänster arm", "delområde" : "underarm"},
+						{"maxValue":40, "träffområde": "vänster arm", "delområde" : "hand"},
+						{"maxValue":44, "träffområde": "höger arm", "delområde" : "skuldra"}
+						{"maxValue":48, "träffområde": "höger arm", "delområde" : "överarm"},
+						{"maxValue":50, "träffområde": "höger arm", "delområde" : "armbåge"},
+						{"maxValue":56, "träffområde": "höger arm", "delområde" : "underarm"},
+						{"maxValue":60, "träffområde": "höger arm", "delområde" : "hand"},
+						{"maxValue":70, "träffområde": "bröstkorg", "delområde" : "bröstkorg"},
+						{"maxValue":78, "träffområde": "buk", "delområde" : "mage"},
+						{"maxValue":80, "träffområde": "buk", "delområde" : "underliv"},
+						{"maxValue":82, "träffområde": "vänster ben", "delområde" : "höft"},
+						{"maxValue":84, "träffområde": "vänster ben", "delområde" : "lår"},
+						{"maxValue":86, "träffområde": "vänster ben", "delområde" : "knä"},
+						{"maxValue":89, "träffområde": "vänster ben", "delområde" : "vad"},
+						{"maxValue":90, "träffområde": "vänster ben", "delområde" : "fot"},
+						{"maxValue":92, "träffområde": "höger ben", "delområde" : "höft"},
+						{"maxValue":94, "träffområde": "höger ben", "delområde" : "lår"},
+						{"maxValue":96, "träffområde": "höger ben", "delområde" : "knä"},
+						{"maxValue":99, "träffområde": "höger ben", "delområde" : "vad"},
+						{"maxValue":100, "träffområde": "höger ben", "delområde" : "fot"}
 					]
 				}
 
 			}, 
 			{
-				"typ" : "hugg",
-				"table":{
-						"name":"hög",
-						"values" : [
-							{"maxValue":50, "träffområde": "huvud", "delområde" : "ansikte"},
-							{"maxValue":75, "träffområde": "huvud", "delområde" : "skalle"},
-							{"maxValue":100, "träffområde": "huvud", "delområde" : "hals"}
-							]
-						}
-
+			"typ" : "hugg",
+			"table":{
+					"name":"hög",
+					"values" : [
+						{"maxValue":12, "träffområde": "huvud", "delområde" : "ansikte"},
+						{"maxValue":24, "träffområde": "huvud", "delområde" : "skalle"},
+						{"maxValue":30, "träffområde": "huvud", "delområde" : "hals"},
+						{"maxValue":36, "träffområde": "vänster arm", "delområde" : "skuldra"}
+						{"maxValue":42, "träffområde": "vänster arm", "delområde" : "överarm"},
+						{"maxValue":45, "träffområde": "vänster arm", "delområde" : "armbåge"},
+						{"maxValue":54, "träffområde": "vänster arm", "delområde" : "underarm"},
+						{"maxValue":60, "träffområde": "vänster arm", "delområde" : "hand"},
+						{"maxValue":66, "träffområde": "höger arm", "delområde" : "skuldra"}
+						{"maxValue":72, "träffområde": "höger arm", "delområde" : "överarm"},
+						{"maxValue":75, "träffområde": "höger arm", "delområde" : "armbåge"},
+						{"maxValue":84, "träffområde": "höger arm", "delområde" : "underarm"},
+						{"maxValue":90, "träffområde": "höger arm", "delområde" : "hand"},
+						{"maxValue":100, "träffområde": "bröstkorg", "delområde" : "bröstkorg"}
+					]
 				}
+
+			},
+			{
+			"typ" : "hugg",
+			"table":{
+					"name":"lågt",
+					"values" : [
+						{"maxValue":16, "träffområde": "buk", "delområde" : "mage"},
+						{"maxValue":20, "träffområde": "buk", "delområde" : "underliv"},
+						{"maxValue":28, "träffområde": "vänster ben", "delområde" : "höft"},
+						{"maxValue":36, "träffområde": "vänster ben", "delområde" : "lår"},
+						{"maxValue":44, "träffområde": "vänster ben", "delområde" : "knä"},
+						{"maxValue":56, "träffområde": "vänster ben", "delområde" : "vad},
+						{"maxValue":60, "träffområde": "vänster ben", "delområde" : "fot},
+						{"maxValue":68, "träffområde": "höger ben", "delområde" : "höft"},
+						{"maxValue":76, "träffområde": "höger ben", "delområde" : "lår"},
+						{"maxValue":84, "träffområde": "höger ben", "delområde" : "knä"},
+						{"maxValue":96, "träffområde": "höger ben", "delområde" : "vad"},
+						{"maxValue":100, "träffområde": "höger ben", "delområde" : "fot"}
+					]
+				}
+
+			}
 			
 	]
 }
