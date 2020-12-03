@@ -8,12 +8,12 @@
 						{"maxValue":8, "träffområde": "huvud", "delområde" : "ansikte"},
 						{"maxValue":16, "träffområde": "huvud", "delområde" : "skalle"},
 						{"maxValue":20, "träffområde": "huvud", "delområde" : "hals"},
-						{"maxValue":24, "träffområde": "vänster arm", "delområde" : "skuldra"}
+						{"maxValue":24, "träffområde": "vänster arm", "delområde" : "skuldra"},
 						{"maxValue":28, "träffområde": "vänster arm", "delområde" : "överarm"},
 						{"maxValue":30, "träffområde": "vänster arm", "delområde" : "armbåge"},
 						{"maxValue":36, "träffområde": "vänster arm", "delområde" : "underarm"},
 						{"maxValue":40, "träffområde": "vänster arm", "delområde" : "hand"},
-						{"maxValue":44, "träffområde": "höger arm", "delområde" : "skuldra"}
+						{"maxValue":44, "träffområde": "höger arm", "delområde" : "skuldra"},
 						{"maxValue":48, "träffområde": "höger arm", "delområde" : "överarm"},
 						{"maxValue":50, "träffområde": "höger arm", "delområde" : "armbåge"},
 						{"maxValue":56, "träffområde": "höger arm", "delområde" : "underarm"},
@@ -43,12 +43,12 @@
 						{"maxValue":12, "träffområde": "huvud", "delområde" : "ansikte"},
 						{"maxValue":24, "träffområde": "huvud", "delområde" : "skalle"},
 						{"maxValue":30, "träffområde": "huvud", "delområde" : "hals"},
-						{"maxValue":36, "träffområde": "vänster arm", "delområde" : "skuldra"}
+						{"maxValue":36, "träffområde": "vänster arm", "delområde" : "skuldra"},
 						{"maxValue":42, "träffområde": "vänster arm", "delområde" : "överarm"},
 						{"maxValue":45, "träffområde": "vänster arm", "delområde" : "armbåge"},
 						{"maxValue":54, "träffområde": "vänster arm", "delområde" : "underarm"},
 						{"maxValue":60, "träffområde": "vänster arm", "delområde" : "hand"},
-						{"maxValue":66, "träffområde": "höger arm", "delområde" : "skuldra"}
+						{"maxValue":66, "träffområde": "höger arm", "delområde" : "skuldra"},
 						{"maxValue":72, "träffområde": "höger arm", "delområde" : "överarm"},
 						{"maxValue":75, "träffområde": "höger arm", "delområde" : "armbåge"},
 						{"maxValue":84, "träffområde": "höger arm", "delområde" : "underarm"},
