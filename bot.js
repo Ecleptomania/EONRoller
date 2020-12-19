@@ -217,7 +217,7 @@ bot.on('message', async (msg) => {
                         specificArea = damageTable.allvarligaSkador[roll].träffområde;
                     }
 
-                    var response = " You hit " + specificArea +  " for: trauma: " + T_damage + ", smärta: "+ S_damage + ", trauma: " + B_damage + " and caused: " + Additions;
+                    var response = " You hit " + specificArea +  " for: trauma: " + T_damage + ", pain: "+ S_damage + ", bleeding: " + B_damage + " and caused: " + Additions;
                     msg.channel.send(response);
                     return;
 
@@ -226,15 +226,12 @@ bot.on('message', async (msg) => {
                 
             }
         }
-
-
-
-
     }
 
     else{
         //Error Message
-        msg.channel.send( "Incocrecct command: " + firstArgumentStr);
+        console.log("wtf");
+        msg.channel.send( "Incocrect command: " + firstArgumentStr);
     }
 
 

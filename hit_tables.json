@@ -1,7 +1,7 @@
 { 
 	"tables": [
 			{
-			"typ" : "hugg",
+			"typ" : "swing",
 			"table":{
 
 					"name":"normal",
@@ -37,9 +37,9 @@
 
 			}, 
 			{
-			"typ" : "hugg",
+			"typ" : "swing",
 			"table":{
-					"name":"hög",
+					"name":"high",
 					"values" : [
 						{"maxValue":12, "träffområde": "huvud", 		"delområde" : "ansikte"},
 						{"maxValue":24, "träffområde": "huvud", 		"delområde" : "skalle"},
@@ -49,20 +49,20 @@
 						{"maxValue":45, "träffområde": "vänster arm", 	"delområde" : "armbåge"},
 						{"maxValue":54, "träffområde": "vänster arm", 	"delområde" : "underarm"},
 						{"maxValue":60, "träffområde": "vänster arm", 	"delområde" : "hand"},
-						{"maxValue":66, "träffområde": "höger arm", 	"delområde" : "skuldra"},
-						{"maxValue":72, "träffområde": "höger arm", 	"delområde" : "överarm"},
-						{"maxValue":75, "träffområde": "höger arm", 	"delområde" : "armbåge"},
-						{"maxValue":84, "träffområde": "höger arm", 	"delområde" : "underarm"},
-						{"maxValue":90, "träffområde": "höger arm", 	"delområde" : "hand"},
-						{"maxValue":100, "träffområde": "bröstkorg", 	"delområde" : "bröstkorg"}
+						{"maxValue":66, "träffområde": "höger arm", "delområde" : "skuldra"},
+						{"maxValue":72, "träffområde": "höger arm", "delområde" : "överarm"},
+						{"maxValue":75, "träffområde": "höger arm", "delområde" : "armbåge"},
+						{"maxValue":84, "träffområde": "höger arm", "delområde" : "underarm"},
+						{"maxValue":90, "träffområde": "höger arm", "delområde" : "hand"},
+						{"maxValue":100, "träffområde": "bröstkorg", "delområde" : "bröstkorg"}
 					]
 				}
 
 			},
 			{
-			"typ" : "hugg",
+			"typ" : "swing",
 			"table":{
-					"name":"låg",
+					"name":"low",
 					"values" : [
 						{"maxValue":16, 	"träffområde": "buk", 			"delområde" : "mage"},
 						{"maxValue":20, 	"träffområde": "buk", 			"delområde" : "underliv"},
@@ -81,7 +81,7 @@
 
 			},
 			{
-			"typ" : "stick",
+			"typ" : "stab",
 			"table":{
 
 					"name":"normal",
@@ -117,9 +117,9 @@
 
 			}, 
 			{
-			"typ" : "stick",
+			"typ" : "stab",
 			"table":{
-					"name":"hög",
+					"name":"high",
 					"values" : [
 						{"maxValue":8, 		"träffområde": "huvud", 		"delområde" : "ansikte"},
 						{"maxValue":16, 	"träffområde": "huvud", 		"delområde" : "skalle"},
@@ -142,9 +142,9 @@
 
 			},
 			{
-			"typ" : "stick",
+			"typ" : "stab",
 			"table":{
-					"name":"lågt",
+					"name":"low",
 					"values" : [
 						{"maxValue":2,		"träffområde": "vänster arm", 	"delområde" : "skuldra"},
 						{"maxValue":4,		"träffområde": "vänster arm", 	"delområde" : "överarm"},
