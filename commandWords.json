@@ -5,5 +5,6 @@
 	"stickCommandWord" : "stick",
 	"normalAttackWord" : "normal",
 	"highAttackWord" : "hög",
-	"lowAttackWord" : "låg"
+	"lowAttackWord" : "låg",
+	"damageCommandWord" : "damage"
 }

@@ -2,6 +2,8 @@
 const auth = require('./auth.json'); //(with path)
 const commandWords = require('./commandWords.json');
 const hit_tables = require('./hit_tables.json');
+const damage_tables = require('./damage_tables.json');
+
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const token = auth.token;
@@ -9,6 +11,11 @@ const prefix = commandWords.prefix;
 const diceRegexExplode = /[0-9]+[td][0-9]+/g;
 const diceRegexNormal = /[0-9]+[n][0-9]+/g;
 const d100DiceKind = 100;
+const d10Dicekind = 10;
+const yttreSkadanLimit = 9;
+
+var keepHitType =  "hugg";
+var keepHitArea = "ansikte";
 
 bot.on('ready', () => {
   console.log('bot is ready')
@@ -116,7 +123,7 @@ bot.on('message', async (msg) => {
         console.log("summa : " + (total) + "");
 
         msg.channel.send( output +  " Total: " + (total) + " ");
-    } else if(firstArgumentStr === commandWords.hitCommand)
+    } else if(firstArgumentStr === commandWords.hitCommandWord)
     {
 
         if (args.length < 2){
@@ -165,13 +172,74 @@ bot.on('message', async (msg) => {
 
         msg.channel.send( "Hit command logged: rolled: "  + roll + "");
 
+    }else if(firstArgumentStr === commandWords.damageCommandWord){
+
+
+        if (keepHitType ===  "-1" || keepHitArea === "-1"){
+            msg.channel.send( "Incocrecct command: No previous hit to calculate damage for.");
+            return;
+        }
+
+
+
+        //split of the first word, damage, to get the value to be used as damage
+        if (args.length <1){
+            msg.channel.send( "Incocrecct damage command, missing arguments. ");
+            return;
+        }
+
+
+        var diceDescriptor = args.shift().toLowerCase(); // get the damage value from teh input array
+        var totalDamage = parseInt(diceDescriptor);
+
+        for (i = 0; i < damage_tables.tables.length; i ++){
+            var damageTable = damage_tables.tables[i];
+            console.log("Success  " + damageTable.typ + " : " + keepHitType +" : " + damageTable.delområde + " : " + keepHitArea + " damage: " + totalDamage);    
+            if (damageTable.typ === keepHitType) {
+                if (damageTable.delområde === keepHitArea) { 
+
+                    var T_damage = 0;
+                    var S_damage = 0;
+                    var B_damage = 0;
+                    var Additions = "no addtional effects";
+                    var specificArea = keepHitArea;
+
+                    if (totalDamage <= yttreSkadanLimit){
+                        T_damage = damageTable.ytligSkada.trauma;
+                        S_damage = damageTable.ytligSkada.smarta;
+                        B_damage = damageTable.ytligSkada.blodning;
+                    }else{
+                        roll = Math.floor(Math.random() * d10Dicekind); // no +1, we want to use this d10 to look up a index.
+                        T_damage = Math.floor(totalDamage * damageTable.allvarligaSkador[roll].trauma);
+                        S_damage = Math.floor(totalDamage * damageTable.allvarligaSkador[roll].smarta);
+                        B_damage = Math.floor(totalDamage * damageTable.allvarligaSkador[roll].blodning);
+                        Additions = damageTable.allvarligaSkador[roll].effect;
+                        specificArea = damageTable.allvarligaSkador[roll].träffområde;
+                    }
+
+                    var response = " You hit " + specificArea +  " for: trauma: " + T_damage + ", smärta: "+ S_damage + ", trauma: " + B_damage + " and caused: " + Additions;
+                    msg.channel.send(response);
+                    return;
+
+                    
+                }
+                
+            }
+        }
+
+
+
+
     }
+
     else{
         //Error Message
         msg.channel.send( "Incocrecct command: " + firstArgumentStr);
     }
- }
 
-  
-})
+
+ }
+ } 
+) //this ) closes the main bot function, keep it last 
+
 

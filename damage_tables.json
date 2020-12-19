@@ -1,0 +1,42 @@
+{ 
+	"tables": [
+			{
+						"name":"huggAnsikte",
+						"typ": "hugg",
+						"delområde": "ansikte",
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", 		"trauma" : 2, 	"smarta" : 1, 	"blodning" : 0.5, 	"effect":"Amp, Fast, Men"},
+								{ "träffområde": "öga", 		"trauma" : 0.5, "smarta" : 1, 	"blodning" : 0.1, 	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "mun/käke",	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "öra", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "näsa", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Bryt, Ärr"},
+								{ "träffområde": "omtökning", 	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Tappar"},
+								{ "träffområde": "blödning", 	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":" Ärr"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Ärr"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":""}
+
+							]
+						},
+				{
+						"name":"huggSkalle",
+						"typ": "hugg",
+						"delområde": "skalle",
+						"ytligSkada" : {"trauma" : 1, "smarta" : 3, "blodning" : 1},
+						"allvarligaSkador" : [
+								{ "träffområde": "hjärna", 		"trauma" : 2, 	"smarta" : 1, 	"blodning" : 0.5, 	"effect":"Amp, Fast, Men"},
+								{ "träffområde": "öga", 		"trauma" : 0.5, "smarta" : 1, 	"blodning" : 0.1, 	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "mun/käke",	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "öra", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Ärr"},
+								{ "träffområde": "näsa", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Bryt, Ärr"},
+								{ "träffområde": "omtökning", 	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Fast, Tappar"},
+								{ "träffområde": "blödning", 	"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":" Ärr"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp, Ärr"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":"Amp"},
+								{ "träffområde": "kött", 		"trauma" : 0.5, "smarta" : 0.5, "blodning" : 0.1,	"effect":""}
+
+							]
+						}
+			]
+}
